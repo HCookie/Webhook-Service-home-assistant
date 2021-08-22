@@ -1,0 +1,34 @@
+basic_webhook:
+  description: Service Provider to use Webhooks
+  fields:
+    webhook:
+      name: Webhook
+      description: Webhook url
+      required: true
+      selector:
+        text:
+    json:
+      name: Json Data
+      description: Json Data To Send
+      required: true
+      selector:
+        text:
+discord_webhook:
+  description: Service Provider to use Discord Webhooks
+  fields:
+    webhook:
+      name: Discord Webhook
+      description: Discord Webhook url
+      required: true
+      selector:
+        text:
+    content:
+      name: Content 
+      description: Message Content
+      selector:
+        text:
+    json:
+      name: Json Data
+      description: Json Data To Send
+      selector:
+        text:
