@@ -2,6 +2,7 @@
     "domain": "webhook_service",
     "name": "Webhook Service Integration",
     "documentation": "https://github.com/HCookie/Webhook-Service-home-assistant",
+    "issue_tracker": "https://github.com/HCookie/Webhook-Service-home-assistant/issues",
     "dependencies": [],
     "codeowners": [],
     "requirements": [],

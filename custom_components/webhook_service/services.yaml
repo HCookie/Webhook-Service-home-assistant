@@ -11,8 +11,6 @@ basic_webhook:
       name: Json Data
       description: Json Data To Send
       required: true
-      selector:
-        text:
 discord_webhook:
   description: Service Provider to use Discord Webhooks
   fields:
@@ -29,6 +27,4 @@ discord_webhook:
         text:
     json:
       name: Json Data
-      description: Json Data To Send
-      selector:
-        text:
+      description: Json Data To Send  
