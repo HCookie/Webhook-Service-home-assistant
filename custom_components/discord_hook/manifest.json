@@ -1,5 +1,5 @@
 {
-    "domain": "discord_int",
+    "domain": "discord_hook",
     "name": "Discord Integration",
     "documentation": "https://github.com/home-assistant/example-custom-config/tree/master/custom_components/expose_service_sync/",
     "dependencies": [],
