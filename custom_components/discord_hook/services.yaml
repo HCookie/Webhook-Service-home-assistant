@@ -1,0 +1,16 @@
+Send_on_Webhook:
+  name: Send Message using Discord Webhooks
+  description: None
+  fields:
+    webook:
+      name: Webhook
+      description: Discord Webhook url
+      example: "https://discord.com/api/webhooks/******"
+      selector:
+        text:
+    content:
+      name: Content
+      description: Message to Send
+      example: "Hello World"
+      selector:
+        text:
