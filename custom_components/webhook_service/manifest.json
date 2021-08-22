@@ -1,5 +1,5 @@
 {
-    "domain": "webhooks_service",
+    "domain": "webhook_service",
     "name": "Webhook Service Integration",
     "documentation": "https://github.com/HCookie/Webhook-Service-home-assistant",
     "dependencies": [],

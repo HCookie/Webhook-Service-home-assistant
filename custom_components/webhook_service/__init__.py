@@ -2,7 +2,7 @@ import logging
 import requests 
 import json
 
-DOMAIN = "webhooks_service"
+DOMAIN = "webhook_service"
 _LOGGER = logging.getLogger(__name__)
 
 
