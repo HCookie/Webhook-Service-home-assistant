@@ -7,7 +7,7 @@ Service provider that allows Home Assistant to utilise Webhooks in automations o
 ## Setup
 ### HACS
 
-The repository folder structure is compatible with [HACS](https://hacs.xyz)
+The repository folder structure is compatible with [HACS](https://hacs.xyz)\n
 Install HACS via: https://hacs.xyz/docs/installation/manual.
 Once installed, select custom repositories, and copy in the address to this `https://github.com/HCookie/Webhook-Service-home-assistant`
 
