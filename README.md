@@ -1,4 +1,5 @@
-# Webhook Service Provider for Home Assistant (in development)
+# Webhook Service Provider for Home Assistant (abandoned 2023)
+## As of 03/2023 this project is abandoned
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 ![Icon](Images/Icon.png)
 
