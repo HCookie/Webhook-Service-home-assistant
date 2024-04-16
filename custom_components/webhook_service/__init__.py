@@ -11,8 +11,12 @@ SERVICE_SEND = "basic_webhook"
 def setup(hass, config):
     def send_basic_webhook(call):
         data = call.data.copy()
+        # if exists json, send json string
         if "json" in data:
             jsondata = json.loads(data["json"])
+        # if exists jsonObj, stringify jsonObj then send it
+        elif "jsonObj" in data:
+            jsondata = data["jsonObj"]
         else:
             jsondata = {}
         result = requests.post(data["webhook"], json = jsondata)

@@ -12,9 +12,11 @@ basic_webhook:
       name: Json Data
       description: Json Data To Send
       required: true
-content_webhook:
-  name: Content Webhook
-  description: Service Provider to use Webhooks with content
+    jsonObj:
+      name: Json Data
+      description: Json Object To Send
+discord_webhook:
+  description: Service Provider to use Discord Webhooks
   fields:
     webhook:
       name: Webhook
@@ -29,4 +31,7 @@ content_webhook:
         text:
     json:
       name: Json Data
-      description: Json Data To Send  
+      description: Json String To Send
+    jsonObj:
+      name: Json Data
+      description: Json Object To Send
