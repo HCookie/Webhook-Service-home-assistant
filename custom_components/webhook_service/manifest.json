@@ -1,11 +1,11 @@
 {
     "domain": "webhook_service",
     "name": "Webhook Service Integration",
+    "codeowners": [],
+    "dependencies": [],
     "documentation": "https://github.com/HCookie/Webhook-Service-home-assistant",
     "issue_tracker": "https://github.com/HCookie/Webhook-Service-home-assistant/issues",
-    "dependencies": [],
-    "codeowners": [],
-    "requirements": [],
     "iot_class": "local_polling",
+    "requirements": [],
     "version": "0.1.0"
   }
