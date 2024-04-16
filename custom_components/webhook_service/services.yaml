@@ -8,22 +8,6 @@ basic_webhook:
       required: true
       selector:
         text:
-    json:
-      name: Json Data
-      description: Json Data To Send
-      required: true
-    jsonObj:
-      name: Json Data
-      description: Json Object To Send
-discord_webhook:
-  description: Service Provider to use Discord Webhooks
-  fields:
-    webhook:
-      name: Webhook
-      description: Webhook url
-      required: true
-      selector:
-        text:
     content:
       name: Content 
       description: Message Content
@@ -31,7 +15,7 @@ discord_webhook:
         text:
     json:
       name: Json Data
-      description: Json String To Send
+      description: Json Data To Send
     jsonObj:
       name: Json Data
       description: Json Object To Send
