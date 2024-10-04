@@ -1,4 +1,5 @@
 basic_webhook:
+  name: Basic Webhook
   description: Service Provider to use Webhooks
   fields:
     webhook:
@@ -14,11 +15,12 @@ basic_webhook:
       selector:
         text:
 discord_webhook:
+  name: Discord Webhook
   description: Service Provider to use Discord Webhooks
   fields:
     webhook:
       name: Discord Webhook
-      description: Discord Webhook url
+      description: Discord Webhook URL
       required: true
       selector:
         text:
