@@ -8,14 +8,80 @@ basic_webhook:
       required: true
       selector:
         text:
-    content:
-      name: Content 
-      description: Message Content
-      selector:
-        text:
     json:
       name: Json Data
       description: Json Data To Send
-    jsonObj:
-      name: Json Data
-      description: Json Object To Send
+      required: true
+      selector:
+        text:
+discord_webhook:
+  name: Discord Webhook
+  description: Service Provider to use Discord Webhooks
+  fields:
+    webhook:
+      name: Discord Webhook
+      description: Discord Webhook URL
+      required: true
+      selector:
+        text:
+          type:
+    title:
+      name: Title
+      description: The title of the embed
+      required: true
+      selector:
+        template:
+    title_url:
+      name: Title URL
+      description: The URL of embed title
+      required: false
+      selector:
+        template:
+    description:
+      name: Description
+      description: The description of the embed
+      required: true
+      selector:
+        template:
+    thumbnail:
+      name: Thumbnail
+      description: The thumbnail of the embed
+      required: false
+      selector:
+        template:
+    author:
+      name: Author
+      description: The author of the embed
+      required: false
+      selector:
+        template:
+    fields:
+      name: Fields
+      description: List of fields in the embed
+      required: false
+      selector:
+        template:
+    image:
+      name: Image
+      description: The image of the embed
+      required: false
+      selector:
+        template:
+    color:
+      name: Color
+      description: The color of the embed (in decimal format)
+      required: false
+      selector:
+        template:
+    timestamp:
+      name: Timestamp
+      description: The timestamp of the embed
+      required: false
+      selector:
+        template:
+    footer:
+      name: Footer
+      description: The footer of the embed
+      required: false
+      selector:
+        template:
