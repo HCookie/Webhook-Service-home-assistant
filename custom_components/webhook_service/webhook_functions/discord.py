@@ -2,9 +2,11 @@ import logging
 import requests 
 import json
 
+from .. import const
+
 _LOGGER = logging.getLogger(__name__)
 
-def discord_webhook(call):
+def discord_webhook(hass, call):
     data = call.data.copy()
     title = data.get("title", "Embed Title")
     title_url = data.get("title_url")
@@ -41,7 +43,7 @@ def discord_webhook(call):
         except Exception as e:
             _LOGGER.error(e)
     if image:
-        output_data["image"] = image
+        output_data["image"] = { "url": image }
     if color:
         output_data["color"] = color
     if timestamp:
@@ -54,7 +56,9 @@ def discord_webhook(call):
     }
 
     result = requests.post(webhook_url, json=embed_data)
-    if result.status_code == 200:
+
+    try:
+        result.raise_for_status()
         _LOGGER.info("Embed sent successfully.")
-    else:
+    except:
         _LOGGER.error("Failed to send embed: %s", result.text)
