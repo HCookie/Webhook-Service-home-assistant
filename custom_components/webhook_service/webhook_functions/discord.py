@@ -56,13 +56,19 @@ def run(hass, call, thumbnail_file=None, thumbnail_name=None, image_file=None, i
     if thumbnail_file and thumbnail_name:
         files["file_thumbnail"] = (thumbnail_name, thumbnail_file)
         output_data["thumbnail"] = {"url": f'attachment://{thumbnail_name}'}
+    elif thumbnail_file and not thumbnail_name and image_file and image_name:
+        output_data["thumbnail"] = {"url": f'attachment://{image_name}'}
 
 
     embed_data = {
         "embeds": [output_data]
     }
 
-    result = requests.post(webhook_url, data={"payload_json": json.dumps(embed_data)}, files=files)
+    if not files:
+        result = requests.post(webhook_url, json=embed_data)
+    else:
+        result = requests.post(webhook_url, data={"payload_json": json.dumps(embed_data)}, files=files)
+
 
     try:
         result.raise_for_status()
@@ -79,16 +85,25 @@ def discord_webhook(hass, call):
     if thumbnail:
         thumbnail_name = thumbnail.split("/")[-1]
         with open(thumbnail, "rb") as thumbnail_file:
+            if thumbnail == image:
+                run(hass, call, thumbnail_file=thumbnail_file, image_file=thumbnail_file, image_name=thumbnail_name)
+                return
+
             if image:
                 image_name = image.split("/")[-1]
                 with open(image, "rb") as image_file:
                     run(hass, call, thumbnail_file, thumbnail_name, image_file, image_name)
-            else:
-                run(hass, call, thumbnail_file, thumbnail_name)
+                    return
+            run(hass, call, thumbnail_file, thumbnail_name)
+            return
 
 
 
-    if not thumbnail and image:
+    if image:
         image_name = image.split("/")[-1]
         with open(image, "rb") as image_file:
             run(hass, call, image_file=image_file, image_name=image_name)
+            return
+
+    run(hass, call)
+    
