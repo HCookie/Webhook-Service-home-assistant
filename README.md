@@ -1,8 +1,8 @@
 # Webhook Service Provider for Home Assistant 
 ### Looking for contributions 
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-![Icon](Images/Icon.png)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs) <br/>
+<img src="Images/Icon.png" alt="Icon" style="width:200px;" />
 
 Service provider that allows Home Assistant to utilise Webhooks in automations or service calls, initially designed for use with Discord Webhooks
 

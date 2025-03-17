@@ -4,7 +4,7 @@ import json
 
 _LOGGER = logging.getLogger(__name__)
 
-def basic_webhook(call):
+def basic_webhook(hass, call):
     data = call.data.copy()
     if "json" in data:
         jsondata = json.loads(data["json"])
