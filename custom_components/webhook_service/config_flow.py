@@ -4,6 +4,7 @@ from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import DOMAIN, DEFAULT_NAME
 
+
 class WebhookServiceConfigFlow(ConfigFlow, domain=DOMAIN):
     """Handle a config flow."""
 
