@@ -78,6 +78,7 @@ def run(
         raise HomeAssistantError(f"Error sending webhook: {e}")
 
 
+
 def discord_webhook(call):
     data = call.data.copy()
     thumbnail = data.get("thumbnail")
