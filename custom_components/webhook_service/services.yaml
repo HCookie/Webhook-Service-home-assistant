@@ -5,6 +5,7 @@ basic_webhook:
     webhook:
       name: Webhook
       description: Webhook url
+      example: "https://webhook.site/xxxx-xxxx-xxxx-xxxx"
       required: true
       selector:
         text:
@@ -14,6 +15,20 @@ basic_webhook:
       required: true
       selector:
         text:
+  advanced_fields:
+    username:
+      name: Username
+      description: Username
+      required: false
+      selector:
+        text:
+    password:
+      name: Password
+      description: Password
+      required: false
+      selector:
+        text:
+  
 discord_webhook:
   name: Discord Webhook
   description: Service Provider to use Discord Webhooks

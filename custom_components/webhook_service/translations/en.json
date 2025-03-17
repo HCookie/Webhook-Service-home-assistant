@@ -2,11 +2,11 @@
     "config": {
       "step": {
         "user": {
-          "description": "Do you want to add Webhook Service?"
+          "description": "Do you want to add the Webhook Service?"
         }
       },
       "abort": {
-        "single_instance_allowed": "Only single instance is allowed."
+        "single_instance_allowed": "Only a single instance of Webhook Service is allowed."
       }
     }
 }

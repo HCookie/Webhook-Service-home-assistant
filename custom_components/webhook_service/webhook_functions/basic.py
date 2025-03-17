@@ -12,5 +12,10 @@ def basic_webhook(call):
         jsondata = data["jsonObj"]
     else:
         jsondata = {}
-    result = requests.post(data["webhook"], json = jsondata)
-    _LOGGER.warn('Received data', data["webhook"])
+
+    auth = None
+    if "username" in data and "password" in data:
+        auth = (data["username"], data["password"])
+    result = requests.post(data["webhook"], json = jsondata, auth = auth)
+    
+    _LOGGER.warning('Sending %s to %s. STATUS:%s', jsondata, data["webhook"], result.status_code)
