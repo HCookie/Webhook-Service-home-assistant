@@ -2,7 +2,7 @@ import logging
 import requests
 import json
 
-from .. import const
+from homeassistant.exceptions import HomeAssistantError
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -68,9 +68,14 @@ def run(
 
     try:
         result.raise_for_status()
-        _LOGGER.info("Embed sent successfully.")
+        _LOGGER.info(
+            "Sending %s to %s. STATUS:%s",
+            embed_data,
+            data["webhook"],
+            result.status_code,
+        )
     except:
-        _LOGGER.error("Failed to send embed: %s", result.text)
+        raise HomeAssistantError(f"Error sending webhook: {e}")
 
 
 def discord_webhook(call):
