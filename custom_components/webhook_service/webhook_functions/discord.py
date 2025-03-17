@@ -6,7 +6,7 @@ from .. import const
 
 _LOGGER = logging.getLogger(__name__)
 
-def run(hass, call, thumbnail_file=None, thumbnail_name=None, image_file=None, image_name=None):
+def run(call, thumbnail_file=None, thumbnail_name=None, image_file=None, image_name=None):
     data = call.data.copy()
     title = data.get("title", "Embed Title")
     title_url = data.get("title_url")
@@ -76,7 +76,7 @@ def run(hass, call, thumbnail_file=None, thumbnail_name=None, image_file=None, i
     except:
         _LOGGER.error("Failed to send embed: %s", result.text)
 
-def discord_webhook(hass, call):
+def discord_webhook(call):
     data = call.data.copy()
     thumbnail = data.get("thumbnail")
     image = data.get("image")
@@ -86,15 +86,15 @@ def discord_webhook(hass, call):
         thumbnail_name = thumbnail.split("/")[-1]
         with open(thumbnail, "rb") as thumbnail_file:
             if thumbnail == image:
-                run(hass, call, thumbnail_file=thumbnail_file, image_file=thumbnail_file, image_name=thumbnail_name)
+                run(call, thumbnail_file=thumbnail_file, image_file=thumbnail_file, image_name=thumbnail_name)
                 return
 
             if image:
                 image_name = image.split("/")[-1]
                 with open(image, "rb") as image_file:
-                    run(hass, call, thumbnail_file, thumbnail_name, image_file, image_name)
+                    run(call, thumbnail_file, thumbnail_name, image_file, image_name)
                     return
-            run(hass, call, thumbnail_file, thumbnail_name)
+            run(call, thumbnail_file, thumbnail_name)
             return
 
 
@@ -102,8 +102,8 @@ def discord_webhook(hass, call):
     if image:
         image_name = image.split("/")[-1]
         with open(image, "rb") as image_file:
-            run(hass, call, image_file=image_file, image_name=image_name)
+            run(call, image_file=image_file, image_name=image_name)
             return
 
-    run(hass, call)
+    run(call)
     

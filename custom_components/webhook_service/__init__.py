@@ -26,5 +26,5 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 async def _setup_webhooks(hass: HomeAssistant, data: dict | ConfigEntry):
     for webhook_data in WEBHOOKS_DATAS:
         if "service" in webhook_data and "function" in webhook_data:
-            hass.services.async_register(DOMAIN, webhook_data["service"], lambda call: webhook_data["function"](hass, call))
+            hass.services.async_register(DOMAIN, webhook_data["service"], webhook_data["function"])
             _LOGGER.info(f'{webhook_data["service"]} set up')
